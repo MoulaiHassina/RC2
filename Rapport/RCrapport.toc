@@ -1,0 +1,20 @@
+\contentsline {chapter}{\numberline {1}Introduction }{3}
+\contentsline {chapter}{\numberline {2}R\IeC {\'e}alisation}{4}
+\contentsline {section}{\numberline {2.1}L'outil cygwin}{4}
+\contentsline {section}{\numberline {2.2}\IeC {\'E}tape 1:}{4}
+\contentsline {subsection}{\numberline {2.2.1}Utilisation du prod1vid.m}{4}
+\contentsline {subsubsection}{Fonctionnement du programme}{4}
+\contentsline {subsection}{\numberline {2.2.2}R\IeC {\'e}glage de param\IeC {\`e}tres}{5}
+\contentsline {subsubsection}{Jeu de test}{5}
+\contentsline {subsubsection}{Affichage}{5}
+\contentsline {subsubsection}{Explication et observation}{5}
+\contentsline {section}{\numberline {2.3}Etape 2}{5}
+\contentsline {subsection}{\numberline {2.3.1}Explication + observation }{5}
+\contentsline {section}{\numberline {2.4}Etape 3}{6}
+\contentsline {subsection}{\numberline {2.4.1}G\IeC {\'e}neration automatique al\IeC {\'e}atoire des Graphes}{6}
+\contentsline {subsubsection}{G\IeC {\'e}neration des Polytree(youpii)}{6}
+\contentsline {subsubsection}{G\IeC {\'e}neration des Multiconnected}{6}
+\contentsline {subsubsection}{G\IeC {\'e}neration des simplement connected}{6}
+\contentsline {section}{\numberline {2.5}R\IeC {\'e}sultats}{6}
+\contentsline {section}{\numberline {2.6}Observation pour chaque type }{6}
+\contentsline {section}{\numberline {2.7}Observation et comparaison entre les differents types}{6}

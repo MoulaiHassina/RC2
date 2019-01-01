@@ -1,0 +1,148 @@
+\documentclass[12pt,a4paper,oneside]{book}
+
+\makeatletter
+\newcommand\thefontsize[1]{{}}
+\makeatother
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{varwidth}
+\usepackage{graphicx}
+\usepackage{caption}
+
+\usepackage[top=2.5cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[titletoc,title]{appendix}
+\usepackage[linewidth=1pt]{mdframed}
+\usepackage{framed}
+\usepackage{listings}
+\usepackage{smartdiagram}
+\usepackage{smartdiagram}
+\usepackage{varwidth}
+\usepackage{amsmath}
+\usesmartdiagramlibrary{additions}
+\lstdefinestyle{customc}{
+	belowcaptionskip=1\baselineskip,
+	breaklines=true,
+	frame=L,
+	xleftmargin=\parindent,
+	language=C,
+	showstringspaces=false,
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries\color{green!40!black},
+	commentstyle=\itshape\color{purple!40!black},
+	identifierstyle=\color{blue},
+	stringstyle=\color{orange},
+}
+
+\lstdefinestyle{customasm}{
+	belowcaptionskip=1\baselineskip,
+	frame=L,
+	xleftmargin=\parindent,
+	language=[x86masm]Assembler,
+	basicstyle=\footnotesize\ttfamily,
+	commentstyle=\itshape\color{purple!40!black},
+}
+
+\lstset{escapechar=@,style=customc}
+
+\lstset{
+	literate=%
+	{à}{{\'a}}1
+	{í}{{\'i}}1
+	{é}{{\'e}}1
+	{è}{{\`e}}1
+	{ý}{{\'y}}1
+	{ú}{{\'u}}1
+	{ó}{{\'o}}1
+	{ě}{{\v{e}}}1
+	{š}{{\v{s}}}1
+	{č}{{\v{c}}}1
+	{ř}{{\v{r}}}1
+	{ž}{{\v{z}}}1
+	{ď}{{\v{d}}}1
+	{ť}{{\v{t}}}1
+	{ň}{{\v{n}}}1
+	{ů}{{\r{u}}}1
+	{Á}{{\'A}}1
+	{Í}{{\'I}}1
+	{É}{{\'E}}1
+	{Ý}{{\'Y}}1
+	{Ú}{{\'U}}1
+	{Ó}{{\'O}}1
+	{Ě}{{\v{E}}}1
+	{Š}{{\v{S}}}1
+	{Č}{{\v{C}}}1
+	{Ř}{{\v{R}}}1
+	{Ž}{{\v{Z}}}1
+	{Ď}{{\v{D}}}1
+	{Ť}{{\v{T}}}1
+	{Ň}{{\v{N}}}1
+	{Ů}{{\r{U}}}1
+}
+
+\begin{document}
+
+	\tableofcontents
+
+	\listoffigures
+
+	
+	\chapter{Introduction }
+	bla bla for tp and le but of ir
+	\chapter{Réalisation}
+	\section{L'outil cygwin}
+	  why did we use it and all
+	\section{Étape 1:}
+	\subsection{Utilisation du prod1vid.m}
+	 principalement prod1vid construit un réseau causal probabiliste basé sur le produit tel que les connexions entre les nœuds sont aléatoires , ainsi que les valeurs initiales attribués à la variable d'intérêt et l'évidence .
+	 Pour exécuter le programme il faut:
+	 \begin{itemize}
+	 	\item sur Matlab taper : prod1vid
+	 	
+	 \end{itemize}
+	 ce que le programme offre en sortie est environnement ou on peut voir toutes les variables et le graphe (matrice) crée.
+	 on peut alors afficher :
+	 
+	 \begin{itemize}
+	 	\item la variable d'intérêt sachant l'évidence
+	 	\item temps de la propagation
+	 	\item type de graphe (multi-connected (multi-connectés) ou polytree (polyarbre))
+	 \end{itemize}
+	 \subsubsection{Fonctionnement du programme}
+	 Aprés avoir étudier le programme on a pu résumer son fonctionnement dans les étapes qui suivent :
+	 \begin{enumerate}
+	 	\item Initialisation du nombre de parents max globale et nombre de noeuds du graphe à construire
+	 	\item Création de liens de façon aléatoire entre les noeuds.
+	 	\item Utilisation de processus de fixation après la création aléatoire afin d'éviter les noeuds isolés et sous graphes isolés ( les inconvénients de l'aléatoire)
+	 	\item Prise de considération des domaines des variables (représentés par les noeuds)
+	 	cas binaire etc ...
+	 	\item Génération de la distribution aléatoire initiale du graphe crée (de possibilité initiales).
+	 	\item génération aléatoire d'une évidence  : une évidence est une information nouvelle qui viens et à qui on aimerait calculer l'influence qu'elle aura sur la variable d'intérêt(évidente est comme une condition ).
+	 	\item Détermination si le graphe est polytree ou multi-connected
+	 	\item Lancement de la propagation 
+	 	
+	 \end{enumerate}
+	 
+	\subsection{Réglage de paramètres}
+	\subsubsection{Jeu de test}
+	different nb node and  different nbparent max testé manuellement
+	\subsubsection{Affichage}
+	affichage du temps de propagation each time à chaque execution du prog et du degré de possibilté (basé sur le produit) de la variable d'interet 
+	\subsubsection{Explication et observation}
+	une explication  sur ce que t'as compris or any observation ( ça serait bien de parler comment fait l'algo generalement et commenter tes resultat)
+	
+	\section{Etape 2}
+	\subsection{Explication + observation }
+       i dunno what u can put here
+       
+    \section{Etape 3}
+    \subsection{Géneration automatique aléatoire des Graphes}
+    \subsubsection{Géneration des Polytree(youpii)}
+    \subsubsection{Géneration des Multiconnected}
+    \subsubsection{Géneration des simplement connected}
+    \section{Résultats}
+    
+    \section{Observation pour chaque type }
+    \section{Observation et comparaison entre les differents types}
+
+\end{document}
