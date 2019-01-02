@@ -119,13 +119,23 @@
 	 	\item Génération de la distribution aléatoire initiale du graphe crée (de possibilité initiales).
 	 	\item génération aléatoire d'une évidence  : une évidence est une information nouvelle qui viens et à qui on aimerait calculer l'influence qu'elle aura sur la variable d'intérêt(évidente est comme une condition ).
 	 	\item Détermination si le graphe est polytree ou multi-connected
-	 	\item Lancement de la propagation 
+	 	\item Lancement de la propagation ( algorithme de propagation)
+	 	
 	 	
 	 \end{enumerate}
 	 
+	 Concernant \textbf{Prodevid2} c'est le mème fonctionnement à part qu'on a droit à deux évidences donc deux informations vont influer notre réseau , en théorie  on peut penser que la propagation des deux évidences prendra plus de temps que celle d'une seule , on testera ce cas dans ce qui suit .
+	 
+	
 	\subsection{Réglage de paramètres}
 	\subsubsection{Jeu de test}
-	different nb node and  different nbparent max testé manuellement
+	On a choisi de fixer le nombre de noeuds à :10
+	
+	et le nombre de parent max à :2 
+	
+	ce qui est censé nous donnée un polytree .
+	
+	
 	\subsubsection{Affichage}
 	affichage du temps de propagation each time à chaque execution du prog et du degré de possibilté (basé sur le produit) de la variable d'interet 
 	\subsubsection{Explication et observation}
