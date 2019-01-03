@@ -1,2 +1,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Le changement des nb noeuds ainsi que nb parents max dans le code prod1evid.m\relax }}{5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Une seule evidence\relax }}{6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Deux evidences\relax }}{6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces exemple d'un graphe en sortie \IeC {\`a} l'\IeC {\'e}xecution de prod1evid.m avec noeuds=80 et parents =10\relax }}{7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces exemple d'un graphe en sortie \IeC {\`a} l'\IeC {\'e}xecution de prod1evid.m avec noeuds=80 et parents =10\relax }}{8}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Les commandes necessaires pour lancer l'inference\relax }}{9}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Lancement de passage et inference \relax }}{9}

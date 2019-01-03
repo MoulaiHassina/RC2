@@ -7,6 +7,7 @@
 \usepackage{enumitem}
 \usepackage{varwidth}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{caption}
 
 \usepackage[top=2.5cm, bottom=3cm, left=2.5cm, right=2.5cm]{geometry}
@@ -134,16 +135,101 @@
 	et le nombre de parent max à :2 
 	
 	ce qui est censé nous donnée un polytree .
+	\subsubsection{Code}
 	
+    	\begin{figure}[h]
+		\centering
+		\includegraphics[scale=0.7]{screens/prodevid1code.png}
+		\captionof{figure}{Le changement des nb noeuds ainsi que nb parents max dans le code prod1evid.m}\label{labelname}%
+		\end{figure}
 	
+	On a choisi de fixer \textbf{le nombre de nœuds à : 54}
+	
+	et \textbf{le nombre de parents max à :3 }
+	
+   \paragraph{Remarque}
+   Dans le code fourni Pour avoir le nombre de parents d'un nœud , le programme tire aléatoirement un nombre entre \textbf{[1,nbparentsmax+1]} donc concrètement  le nombre de parents max est de 4 et non de 3  voir code:prod1evid.m.
+   
 	\subsubsection{Affichage}
-	affichage du temps de propagation each time à chaque execution du prog et du degré de possibilté (basé sur le produit) de la variable d'interet 
-	\subsubsection{Explication et observation}
-	une explication  sur ce que t'as compris or any observation ( ça serait bien de parler comment fait l'algo generalement et commenter tes resultat)
+	le résultat était le suivant :
 	
-	\section{Etape 2}
-	\subsection{Explication + observation }
-       i dunno what u can put here
+	
+	\begin{frame}{}
+		\centering
+		\begin{minipage}[H]{0.5\linewidth}
+			\includegraphics[width=1\textwidth]{screens/prodevid1affichge.png}%
+			\captionof{figure}{Une seule evidence}\label{labelname}%
+		\end{minipage}
+		\hspace{0.5cm}
+		\begin{minipage}[H]{0.5\linewidth}
+			\includegraphics[width=1\textwidth]{screens/prodevid2affichage.png}%
+			\captionof{figure}{Deux evidences}\label{labelname}%
+		\end{minipage}
+	\end{frame}
+
+		\begin{center}
+			\begin{tabular}{ | l || c | c | }
+				\hline
+				\textbf{nombre d'évidence} & 1 &  2\\
+				\hline
+				\textbf{temps de propagation} & 0.18 secondes & 0.19 secondes\% \\
+				\hline
+				\textbf{Bel variable d'intérêt} & 1 & 0.018 \\
+				\hline
+			\end{tabular}
+		\end{center}
+
+		
+	\subsubsection{Explication et observation}
+    	Comme on a pu le deviner la propagation prend plus de temps avec deux évidences qu'avec une seule , car le calcul des nouvelles distributions de possibilités est plus complexe avec deux informations qui arrivent qu'avec une seule .
+	
+	\section{Étape 2}
+	\subsection{Explication  }
+      Dans cette étape il nous ai demandé d'utiliser deux programmes exécutables
+      à fin de passer d'une modélisation graphique avec des algorithmes de propagation à une une représentation logique en clauses (max sat weighted ) en utilisant le processus d'inférence.
+            Prodevid1 donne en sortie un graphe ( matrice en matlab) qui modélise le graphe crée
+            \begin{figure}[H]
+            	\centering
+            	\includegraphics[scale=0.7]{screens/etape2graph.png}
+            	\captionof{figure}{exemple d'un graphe en sortie à l'éxecution de  prod1evid.m avec noeuds=80 et parents =10}\label{labelname}%
+            	
+            \end{figure}
+            \begin{figure}[H]
+            	\centering
+            	\includegraphics[scale=0.7]{screens/etape2graph2.png}
+            	\captionof{figure}{exemple d'un graphe en sortie à l'éxecution de  prod1evid.m avec noeuds=80 et parents =10}\label{labelname}%
+            \end{figure}
+      
+      Tout d'abord on reprend l'exemple vu dans l'étape 1 avec un nombre de noeuds à 54 et nombre de parents max à 4 puis il faudra faire :
+      \begin{itemize}
+      	\item Se placer dans le dossier licence sous terminal de cygwin .
+      	\item Exécuter le prod1evid sous matlab
+      	\item Exécuter le ./passage.exe qui convertit les graph.m en clauses (maxSat)
+      	\item Lancement du processus d'inférence on aura le temps de l'inférence en MICRO SECONDES.
+      	\item Affichage du résultat avec la commande : cat résultats
+      \end{itemize}
+      
+      \subsubsection{Affichage}
+      
+      
+      
+      	
+      		\begin{figure}[H]
+      				\centering
+      			\includegraphics[scale=1]{screens/etape2terminal.png}%
+      			\captionof{figure}{Les commandes necessaires pour lancer l'inference}\label{labelname}%
+      		\end{figure}
+      		
+      		\begin{figure}[H]
+      				\centering
+      			\includegraphics[scale=1.1]{screens/etape2.png}%
+      			\captionof{figure}{Lancement de passage et inference }\label{labelname}%
+      		\end{figure}
+        
+        
+        \subsubsection{Observation}
+        on remarque dans notre cas on à affaire à un réseau multi-connected on a remarqué que la propagation était prenait presque autant de temps que l'inférence , on peut expliquer ça par le fait qu'on manipule des graphes où le nombres de noeuds et connexions n'est pas conséquent par contre dans le cas ou le nombre de noeuds était 80 et parents = 10 la propagation avait pris beaucoup plus de temps  voir l'etape 3 comparé à l'inférence qui fait appel à un solver max sat .
+
        
     \section{Etape 3}
     \subsection{Géneration automatique aléatoire des Graphes}
