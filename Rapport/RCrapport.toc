@@ -9,7 +9,7 @@
 \contentsline {subsubsection}{Code}{5}
 \contentsline {paragraph}{Remarque}{5}
 \contentsline {subsubsection}{Affichage}{6}
-\contentsline {subsubsection}{Explication et observation}{6}
+\contentsline {subsubsection}{Observation}{6}
 \contentsline {section}{\numberline {2.3}\IeC {\'E}tape 2}{6}
 \contentsline {subsection}{\numberline {2.3.1}Explication }{6}
 \contentsline {subsubsection}{Affichage}{9}
