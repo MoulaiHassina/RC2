@@ -83,16 +83,29 @@
 
 \begin{document}
 
+	\def\reportnumber{}
+	\def\reporttitle{Inférence logique et propagation graphique }
+	\input{front_page}
+	
 	\tableofcontents
 
 	\listoffigures
 
 	
 	\chapter{Introduction }
-	bla bla for tp and le but of ir
+	Nous avons précedemment (dans le module RC1) manipulé les notion d'inférence logique avec Max-Sat, mais plusieurs autre méthodes existe dont les méthodes graphiques.
+	
+	Le présent TP est orienté théorie des possibilités, celui-ci pouvant être modélisé aussi bien graphiquement que par une représentation MAX Weighted SAT, nous avons pour but de tester les deux méthodes sur différents problèmes c'est à dire représenté nous forme de polytree, graph multiconnected et graph simply connected.\\
+	
+	Pour cela deux outils largement utilisé dans ce domaine ont été mis à notre disposition, Il s'agit de la \textbf{PNT} de \textbf{Matlab} et l'outil \textbf{cygwin} sous Windows.\\
+
+Ainsi nous allons grâce à ces outils comparer les temps d'inférence logique avec les temps de propagation de la méthode graphique afin de comprendre les avantages et inconvenants de chacun, et de savoir sur quelle base choisir la méthode d'inférence du degrés de possibilité la plus adéquate.
+	
+	
 	\chapter{Réalisation}
 	\section{L'outil cygwin}
-	  why did we use it and all
+	Cygwin est une collection de logiciels libres à l'origine développés par Cygnus Solutions permettant à différentes versions de Windows de Microsoft d'émuler un système Unix. Il vise principalement l'adaptation à Windows de logiciels qui fonctionnent sur des systèmes POSIX (tels que les systèmes GNU/Linux, BSD, et Unix). Cygwin simule un environnement Unix sous Windows, rendant possible l'exécution de ces logiciels après une simple compilation.[1] 
+	
 	\section{Étape 1:}
 	\subsection{Utilisation du prod1vid.m}
 	 principalement prod1vid construit un réseau causal probabiliste basé sur le produit tel que les connexions entre les nœuds sont aléatoires , ainsi que les valeurs initiales attribués à la variable d'intérêt et l'évidence .
@@ -183,6 +196,8 @@
 	\subsubsection{Observation}
     	Comme on a pu le deviner la propagation prend plus de temps avec deux évidences qu'avec une seule , car le calcul des nouvelles distributions de possibilités conditionnelles est plus complexe avec deux informations (deux conditions) qui arrivent qu'avec une seule (une seule condition) .
 	
+	\newpage
+	
 	\section{Étape 2}
 	\subsection{Explication  }
       Dans cette étape il nous ai demandé d'utiliser deux programmes exécutables
@@ -231,13 +246,31 @@
         on remarque dans notre cas on à affaire a un réseau multi-connected on a remarqué que la propagation prenait presque autant de temps que l'inférence , on peut expliquer ça par le fait qu'on manipule des graphes où le nombres de noeuds et connexions n'est pas conséquent par contre dans le cas ou le nombre de noeuds était 80 et parents = 10 la propagation avait pris beaucoup plus de temps  voir l'etape 3 comparé à l'inférence qui fait appel à un solver max sat .
 
        
-    \section{Etape 3}
-    \subsection{Géneration automatique aléatoire des Graphes}
-    \subsubsection{Géneration des Polytree(youpii)}
-    \subsubsection{Géneration des Multiconnected}
-    \subsubsection{Géneration des simplement connected}
-    \section{Résultats}
+    \section{Étape 3}
+    \subsection{Génération automatique aléatoire des Graphes}
+    \subsubsection{Génération des Polytree}
+    Un \textbf{polytree} est un graphe ayant les particularités suivantes: c'est un graphe orienté (les arcs reliant les noeuds sont orienté parent $\rightarrow$ fils),connexe (pas de noeuds ou sous arbre libre), acyclique (ne contient pas de cycle/ boucle), et enfin simplement connecté.\\
     
+    Ainsi afin d'obtenir des polytree, nous avons limité le nombre maximum de parent à 1 seul parent.
+    
+    Par contre, pour ce qui est du nombre de noeuds nous avons le choix, mais nous nous sommes limité aux testes montrés dans le tableau récapitulatif plus bas.
+    
+ 
+    
+    \subsubsection{Génération des Multiconnected}
+    On parle graphes \textbf{Multiconnected} lorsque nous avons un graphe orienté (les arcs reliant les noeuds sont orienté parent $\rightarrow$ fils),connexe (pas de noeuds ou sous arbre libre), acyclique (ne contient pas de cycle/ boucle), et enfin à connections multiple de ses nœuds.\\
+    
+    Pour obtenir cette catégorie de graphe nous pris des nombres de parents supérieur à 1 , et même de l'ordre de 7 à 10 parents par noeuds, toujours en faisant varier le nombre de noeuds, afin de diversifier les résultats et explorer plus de combinaison.
+    
+    \subsubsection{Génération des Simply connected}
+    la notion de simple connexité raffine celle de connexité : là où un espace connexe est simplement "d'un seul tenant", un espace simplement connexe est de plus sans "trou" ni "poignée" mais nous parlant toujours de graph sans boucles.[2]\\
+    
+     De manière analogue que pour les deux type de graphes précédents nous avons généré ce type de graphe selon le nombre de noeuds et de parent et obtenu les résultats regroupés dans la section "résultats".
+    
+    \newpage
+    
+    \section{Résultats}
+    Suite à maintes expérimentations et testes avec les différentes configurations précédentes, nous avons résumé quelques résultats dans le tableau suivant: 
 \begin{center}
 \begin{tabular}{|l||c|c|c|}
 	\hline
@@ -248,46 +281,125 @@
 
 		
 	%\newline
-	\textbf{25 Nœuds / 1 Parents} & 0.156598 sec & 171601 milisec  & 0.049787
+	\textbf{25 Nœuds / 1 Parents} & 0.156598 sec & 0.171601 sec  & 0.049787
 	\\
 	\hline
 	
 	%\newline
-	\textbf{50 Nœuds / 1 Parents} & 0.282039 sec & 218400 milisec  & 1
+	\textbf{50 Nœuds / 1 Parents} & 0.282039 sec & 0.218400 sec  & 1
 	\\
 	\hline
 	
 	%\newline
-	\textbf{15 Nœuds / 3 Parents} & 0.052538 sec & 156000 milisec  & 0.049787
+	\textbf{15 Nœuds / 3 Parents} & 0.052538 sec & 0.156000 sec  & 0.049787
 	\\
 	\hline
 	
 	%\newline
-	\textbf{25 Nœuds / 4 Parents} &  0.081438 sec & 156000 milisec  & 1
+	\textbf{25 Nœuds / 4 Parents} &  0.081438 sec & 0.156000 sec  & 1
 	\\
 	\hline
 	
 	%\newline
-	\textbf{25 Nœuds / 7 Parents} & 0.078056 sec & 249600 milisec  & 1
+	\textbf{25 Nœuds / 7 Parents} & 0.078056 sec & 0.249600 sec  & 1
 	\\
 	\hline
 	
 	%\newline
-	\textbf{25 Nœuds / 10 Parents} & 0 sec & 0 milisec  & 0
+	\textbf{25 Nœuds / 10 Parents} & 0.55983 sec & 0.315625 sec  & 0.018316
 	\\
 	\hline
 	
 	%\newline
-	\textbf{30 Nœuds / 4 Parents} & 0 sec & 0 milisec  & 1
+	\textbf{40 Nœuds / 10 Parents} &  14.1780 sec & 0.50927 sec & 0.36788
 	\\
 	\hline
 	
+	
+	%\newline
+	\textbf{30 Nœuds / 7 Parents} &  0.094228 sec & 0.218401 sec & 1
+	\\
+	\hline
+	
+	%\newline
+	\textbf{30 Nœuds / 1 Parent} &  0.196302 sec & 0.187200 sec & 0.018316
+	\\
+	\hline
+	
+	%\newline
+	\textbf{80 Nœuds / 10 Parents} & pc stopped & pc stopped   & pc stopped
+	\\
+	\hline
+	
+	%\newline
+
 
 
 \end{tabular} 
 \end{center}
+Quelques résultats sont mis dans l'annexe sous forme de capture d'ecran.
     
     \section{Observation pour chaque type }
-    \section{Observation et comparaison entre les differents types}
+    \subsection{Observation pour les Polytree}
+    Comme le montre les résultats précédemment obtenus, les polytree sont déja très rapide en temps de construction, puis nous remarquons que ce soit par la méthode graphique \textbf{(Propagation)} ou la méthode logique \textbf{(Inférence)} les degrés de possibilité sont donné très rapidement, même que pour certains cas la méthode graphique est très légèrement plus rapide
+    
+  
+    
+    
+    \subsection{Observation pour les Multiconnected}
+    D'après les résultats produits suite aux nombreuses expérimentations que nous avons effectué, nous somme en mesure de souligner la rapidité de la méthode d'inférence logique (basé maw weighted sat) comparé à la méthode graphique (propagation), tel que pour de grandes instances / graphe multiconnectés (beaucoup de noeuds et beaucoup d'arcs) la méthode d'inférence logique reste raisonnablement rapide, légèrement plus lente que pour les polytree, contrairement à la méthode graphique de propagation qui voit le temps de propagation croitre de l'ordre de 10 aine, jusqu'à ne plus être exécutable sur nos machine comme pour (80 noeuds et 10 parents).
+    
+
+    
+    \subsection{Observation pour les Simply connected}
+    En vu des résultats des expérimentations sur ce type de graphe nous avons constaté que le temps de propagation via la méthode graphique est plus rapide que le temps d'inférence de la méthode logique , bien que les deux reste inférieur à 1 second.
+    
+    \newpage
+    \chapter{Conclusion et comparaison}
+    Suite aux expérimentation effectuées avec les deux techniques misent à notre disposition lors de ce Tp, nous pouvons constater que la méthode d'inférence logique est bien plus rapide et efficace que la méthode graphique de propagation.\\
+    
+    Car bien que les méthodes graphiques soient plus parlantes et lisible pour l'humain, leurs complexité n'en est pas pour autant bonne, car en plus du temps de propagation très lent pour les grandes instances de problème (multiconnected), la méthode de propagation nécessite aussi la construction de l'arbre de jonction qui prends elle aussi un temps non négligeable.\\
+    
+    Ainsi à la limite pour les polyarbe nous pouvant utiliser les deux méthodes car bien que la méthode graphique soit légèrement plus rapide que celle d'inférence logique, les deux méthodes donne le résultats très rapidement, d'ailleurs la méthode graphique ne nécessite pas dans ce cas là la construction de l'arbre de jonction.
+      
+
+\newpage
+\chapter*{Bibliographie}
+\textbf{ }\\
+
+[1] : https://fr.wikipedia.org/wiki/Cygwin
+\textbf{ }\\
+
+[2] : https://fr.wikipedia.org/wiki/Connexit\%C3\%A9\_simple
+
+\chapter*{ANNEXE}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{screens/multiconnected.png}%
+	\captionof{figure}{Expérimentation 1 }\label{labelname}%
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{screens/polytree.png}%
+	\captionof{figure}{Expérimentation 2 }\label{labelname}%
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{screens/25_0.png}%
+	\captionof{figure}{Expérimentation 3}\label{labelname}%
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{screens/25_3_6.png}%
+	\captionof{figure}{Expérimentation 4 }\label{labelname}%
+\end{figure}
+
+
+
+
+
 
 \end{document}

@@ -7,18 +7,21 @@
 \contentsline {subsection}{\numberline {2.2.2}R\IeC {\'e}glage de param\IeC {\`e}tres}{5}
 \contentsline {subsubsection}{Jeu de test}{5}
 \contentsline {subsubsection}{Code}{5}
-\contentsline {paragraph}{Remarque}{5}
+\contentsline {paragraph}{Remarque}{6}
 \contentsline {subsubsection}{Affichage}{6}
 \contentsline {subsubsection}{Observation}{6}
-\contentsline {section}{\numberline {2.3}\IeC {\'E}tape 2}{6}
-\contentsline {subsection}{\numberline {2.3.1}Explication }{6}
+\contentsline {section}{\numberline {2.3}\IeC {\'E}tape 2}{7}
+\contentsline {subsection}{\numberline {2.3.1}Explication }{7}
 \contentsline {subsubsection}{Affichage}{9}
 \contentsline {subsubsection}{Observation}{10}
-\contentsline {section}{\numberline {2.4}Etape 3}{10}
-\contentsline {subsection}{\numberline {2.4.1}G\IeC {\'e}neration automatique al\IeC {\'e}atoire des Graphes}{10}
-\contentsline {subsubsection}{G\IeC {\'e}neration des Polytree(youpii)}{10}
-\contentsline {subsubsection}{G\IeC {\'e}neration des Multiconnected}{10}
-\contentsline {subsubsection}{G\IeC {\'e}neration des simplement connected}{10}
-\contentsline {section}{\numberline {2.5}R\IeC {\'e}sultats}{10}
-\contentsline {section}{\numberline {2.6}Observation pour chaque type }{10}
-\contentsline {section}{\numberline {2.7}Observation et comparaison entre les differents types}{10}
+\contentsline {section}{\numberline {2.4}\IeC {\'E}tape 3}{10}
+\contentsline {subsection}{\numberline {2.4.1}G\IeC {\'e}n\IeC {\'e}ration automatique al\IeC {\'e}atoire des Graphes}{10}
+\contentsline {subsubsection}{G\IeC {\'e}n\IeC {\'e}ration des Polytree}{10}
+\contentsline {subsubsection}{G\IeC {\'e}n\IeC {\'e}ration des Multiconnected}{10}
+\contentsline {subsubsection}{G\IeC {\'e}n\IeC {\'e}ration des Simply connected}{10}
+\contentsline {section}{\numberline {2.5}R\IeC {\'e}sultats}{11}
+\contentsline {section}{\numberline {2.6}Observation pour chaque type }{11}
+\contentsline {subsection}{\numberline {2.6.1}Observation pour les Polytree}{11}
+\contentsline {subsection}{\numberline {2.6.2}Observation pour les Multiconnected}{11}
+\contentsline {subsection}{\numberline {2.6.3}Observation pour les Simply connected}{11}
+\contentsline {chapter}{\numberline {3}Conclusion et comparaison}{12}
